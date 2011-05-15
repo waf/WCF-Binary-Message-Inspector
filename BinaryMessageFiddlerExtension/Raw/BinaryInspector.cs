@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 using Fiddler;
@@ -18,11 +17,9 @@ namespace BinaryMessageFiddlerExtension
 
         public override void AddToTab(TabPage o)
         {
-            _myControl = new TextBox();
-            _myControl.ReadOnly = true;
-            _myControl.Multiline = true;
-            _myControl.TextChanged += new EventHandler(TextChanged);
-            o.Text = "WCF Binary Raw";
+            _myControl = new TextBox { ReadOnly = true, Multiline = true };
+            _myControl.TextChanged += TextChanged;
+            o.Text = "WCF Binary";
             o.Controls.Add(_myControl);
             o.Controls[0].Dock = DockStyle.Fill;
         }
@@ -114,21 +111,6 @@ namespace BinaryMessageFiddlerExtension
                 ms.Read(_entityBody, 0, Int32.Parse(ms.Length.ToString()));
                 ms.Flush();
             }
-        }
-
-        private static MemoryStream CreateMemoryStream(XmlDocument doc)
-        {
-            MemoryStream ms = new MemoryStream();
-                XmlWriter w = XmlWriter.Create(ms);
-                doc.WriteTo(w);
-                w.Flush();
-                ms.Position = 0;
-                return ms;
-        }
-        private static XmlDictionaryWriter CreateWriterForMessage(XmlDocument doc)
-        {
-                MemoryStream ms = CreateMemoryStream(doc);
-                return XmlDictionaryWriter.CreateBinaryWriter(ms);
         }
     }
 }
