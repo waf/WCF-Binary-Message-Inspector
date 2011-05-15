@@ -99,17 +99,26 @@ namespace BinaryMessageFiddlerExtension
         {
             XmlDocument document = new XmlDocument();
             _isDirty = true;
-            document.LoadXml(_myControl.Text);
-
-            using (MemoryStream ms = new MemoryStream())
+            try
             {
-                XmlDictionaryWriter binaryWriter = XmlDictionaryWriter.CreateBinaryWriter(ms);
-                document.WriteContentTo(binaryWriter);
-                binaryWriter.Flush();
-                ms.Position = 0;
-                _entityBody = new byte[Int32.Parse(ms.Length.ToString())];
-                ms.Read(_entityBody, 0, Int32.Parse(ms.Length.ToString()));
-                ms.Flush();
+                document.LoadXml(_myControl.Text);
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    XmlDictionaryWriter binaryWriter = XmlDictionaryWriter.CreateBinaryWriter(ms);
+                    document.WriteContentTo(binaryWriter);
+                    binaryWriter.Flush();
+                    ms.Position = 0;
+                    _entityBody = new byte[Int32.Parse(ms.Length.ToString())];
+                    ms.Read(_entityBody, 0, Int32.Parse(ms.Length.ToString()));
+                    ms.Flush();
+                }
+            }
+            catch (XmlException ex)
+            {
+                log.LogString("An XML error occured, reverting to plain text");
+                System.Text.UTF8Encoding encoding = new System.Text.UTF8Encoding();
+                _entityBody = encoding.GetBytes(_myControl.Text);
             }
         }
     }

@@ -1,6 +1,6 @@
-﻿using BinaryMessageFiddlerExtension;
+﻿using System.Windows.Forms;
+using BinaryMessageFiddlerExtension;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Windows.Forms;
 
 namespace UnitTests
 {
@@ -45,6 +45,21 @@ namespace UnitTests
         [TestMethod]
         public void testTextChanged()
         {
+            rawBinInspector._myControl.Text = "<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"><s:Header><a:Action s:mustUnderstand=\"1\">http://tempuri.org/IEncounterWCFService/GetEncounter</a:Action><a:MessageID>urn:uuid:fa9d4b23-eae2-4487-9bbc-19041fcc6318</a:MessageID><a:SequenceAcknowledgement><a:ReplyTo>http://www.w3.org/2005/08/addressing/anonymous</a:ReplyTo></a:SequenceAcknowledgement><a:To s:mustUnderstand=\"1\">http://emr.local.wellmed.net/service/EncounterWCFService.svc</a:To></s:Header><s:Body><GetEncounter xmlns=\"http://tempuri.org/\"><EncounterId>a87b775c-1377-4142-8899-bda093e7795d</EncounterId></GetEncounter></s:Body></s:Envelope>";
+            rawBinInspector.TextChanged(new object(), new System.EventArgs());
+        }
+
+        [TestMethod]
+        public void testTextChanged_EmptyXml()
+        {
+            rawBinInspector._myControl.Text = "";
+            rawBinInspector.TextChanged(new object(), new System.EventArgs());
+        }
+
+        [TestMethod]
+        public void testTextChanged_BadXml()
+        {
+            rawBinInspector._myControl.Text = "<s:Envelope xmlns:s=\"http://www.w3.org/2003/05/soap-envelope\" xmlns:a=\"http://www.w3.org/2005/08/addressing\"<s:Header><a:Action s:mustUnderstand=\"1\">http://tempuri.org/IEncounterWCFService/GetEncounter</a:Action><a:MessageID>urn:uuid:fa9d4b23-eae2-4487-9bbc-19041fcc6318</a:MessageID><a:SequenceAcknowledgement><a:ReplyTo>http://www.w3.org/2005/08/addressing/anonymous</a:ReplyTo></a:SequenceAcknowledgement><a:To s:mustUnderstand=\"1\">http://emr.local.wellmed.net/service/EncounterWCFService.svc</a:To></s:Header><s:Body><GetEncounter xmlns=\"http://tempuri.org/\"><EncounterId>a87b775c-1377-4142-8899-bda093e7795d</EncounterId></GetEncounter></s:Body></s:Envelope>";
             rawBinInspector.TextChanged(new object(), new System.EventArgs());
         }
     }
