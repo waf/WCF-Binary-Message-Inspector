@@ -17,8 +17,10 @@ namespace BinaryMessageFiddlerExtension
 
         public override void AddToTab(TabPage o)
         {
+            
             _myControl = new TextBox { ReadOnly = true, Multiline = true };
             _myControl.TextChanged += TextChanged;
+            _myControl.ScrollBars = ScrollBars.Vertical;
             o.Text = "WCF Binary";
             o.Controls.Add(_myControl);
             o.Controls[0].Dock = DockStyle.Fill;
