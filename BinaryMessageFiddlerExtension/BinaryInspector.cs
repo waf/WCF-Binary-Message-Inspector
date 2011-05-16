@@ -23,7 +23,7 @@ namespace BinaryMessageFiddlerExtension
         public override void AddToTab(TabPage o)
         {
             _myControl = new XmlTreeView();
-            o.Text = "WCF Binary";
+            o.Text = "WCF Binary XML";
             o.Controls.Add(_myControl);
             o.Controls[0].Dock = DockStyle.Fill;
         }
@@ -32,7 +32,7 @@ namespace BinaryMessageFiddlerExtension
 
         public override int GetOrder()
         {
-            return 0;
+            return 1;
         }
 
         public bool bDirty
