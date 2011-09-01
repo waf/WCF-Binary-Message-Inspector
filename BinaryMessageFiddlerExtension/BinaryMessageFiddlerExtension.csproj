@@ -79,11 +79,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BinaryInspector.cs" />
     <Compile Include="BinaryRequestInspector.cs" />
     <Compile Include="BinaryResponseInspector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WcfBinaryDictionary.cs" />
+    <Compile Include="WcfBinaryConverter.cs" />
     <Compile Include="XmlTreeView.cs">
       <SubType>UserControl</SubType>
     </Compile>
