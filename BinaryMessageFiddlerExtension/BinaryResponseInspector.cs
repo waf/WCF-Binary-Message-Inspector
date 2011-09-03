@@ -18,7 +18,7 @@ namespace BinaryMessageFiddlerExtension
 
         public override void AddToTab(TabPage o)
         {
-            o.Text = "WCF Binary XML";
+            o.Text = "WCF Binary";
 
             viewControl = new XmlTreeView();
             viewControl.BackColor = CONFIG.colorDisabledEdit;

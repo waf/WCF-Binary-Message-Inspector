@@ -13,14 +13,14 @@ namespace BinaryMessageFiddlerExtension
         private bool isReadOnly;
         private XmlTreeView viewControl;  // read-only tree view of xml
         private TextBox editControl; // writeable text area of xml
-
+        
         private byte[] binaryContent;
 
         private static Logger log = new Logger(true);
 
         public override void AddToTab(TabPage o)
         {
-            o.Text = "WCF Binary XML";
+            o.Text = "WCF Binary";
 
             isReadOnly = true;
 
