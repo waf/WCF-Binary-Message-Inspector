@@ -9,7 +9,9 @@ This is a modification of the [WCF Binary Message Inspector](http://archive.msdn
 Installation
 ------------
 
-Copy the file `BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension.dll` into `C:\Program Files\Fiddler2\Inspectors` and restart Fiddler. The inspector is titled "WCF Binary"
+Copy the file `BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension.dll` 
+([direct download](https://github.com/waf/WCF-Binary-Message-Inspector/raw/master/BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension.dll)) 
+into `C:\Program Files\Fiddler2\Inspectors` and restart Fiddler. The inspector is titled "WCF Binary"
 
 Tree View Usage
 ---------------
