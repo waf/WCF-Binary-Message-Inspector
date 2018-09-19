@@ -6,18 +6,18 @@ This is a modification of the [WCF Binary Message Inspector](http://archive.msdn
 1. Uses a collapsible tree view instead of a textarea to display the decoded WCF binary message.
 2. Allows editing and reissuing of captured WCF binary messages (thanks to [HofmaDresu](https://github.com/HofmaDresu))
 
-Installation for Fiddler2
+Installation for Fiddler4
 ------------
 
 Copy the file `BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension.dll` 
 ([direct download](https://github.com/waf/WCF-Binary-Message-Inspector/raw/master/BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension.dll)) 
 into `C:\Program Files\Fiddler2\Inspectors` and restart Fiddler.
 
-Installation for Fiddler4 (Beta)
+Installation for Fiddler2
 ------------
 
-Copy the file `BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension_Fiddler4.dll` 
-([direct download](https://github.com/waf/WCF-Binary-Message-Inspector/raw/master/BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension_Fiddler4.dll)) 
+Copy the file `BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension_Fiddler2.dll` 
+([direct download](https://github.com/waf/WCF-Binary-Message-Inspector/raw/master/BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension_Fiddler2.dll)) 
 into `C:\Program Files\Fiddler2\Inspectors` and restart Fiddler.
 
 Tree View Usage

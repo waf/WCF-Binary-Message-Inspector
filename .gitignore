@@ -1,0 +1,6 @@
+/.vs
+obj
+bin
+!/BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension_Fiddler2.dll
+!/BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension_Fiddler4.dll
+!/BinaryMessageFiddlerExtension/bin/Release/BinaryMessageFiddlerExtension.dll
